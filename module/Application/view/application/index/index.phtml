@@ -1,0 +1,35 @@
+<div class="container">
+
+    <h1>Users</h1>
+
+    <ul>
+        <?php foreach ($users as $user) : ?>
+        <li><?php echo $user['name'] ?></li>
+        <?php endforeach; ?>
+    </ul>
+
+    <hr/>
+
+    <h1>User 1</h1>
+    <pre><?php print_r($user1) ?></pre>
+
+    <hr/>
+
+    <a href="<?php echo $this->url('application/json') ?>">Json View</a>
+    <a id="make-json-call" href="<?php echo $this->url('application/jsonpost') ?>">Json Post Response</a>
+
+</div>
+
+<script type="text/javascript">
+$('#make-json-call').click(function(e){
+    e.preventDefault();
+
+    $.ajax({
+        type : 'post',
+        url : $(this).attr('href'),
+    }).done(function(resp){
+        console.log(resp);
+    });
+
+});
+</script>
