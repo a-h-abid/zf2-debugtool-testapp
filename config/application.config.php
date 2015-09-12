@@ -15,11 +15,11 @@ $modules = [
 if (getenv('APP_ENV') == 'development')
 {
     $modules = array_merge($modules, [
-        // 'ZfSnapPhpDebugBar',
-        // 'ZendDeveloperTools',
-        // 'BjyProfiler',
-        // 'SanSessionToolbar',
-        // 'Jhu\ZdtLoggerModule',
+        'ZfSnapPhpDebugBar',
+        'ZendDeveloperTools',
+        'BjyProfiler',
+        'SanSessionToolbar',
+        'Jhu\ZdtLoggerModule',
     ]);
 }
 
