@@ -18,10 +18,9 @@ return array(
         // module. Simply drop new controllers in, and you can access them
         // using the path /application/:controller/:action
         'application' => array(
-            'type'    => 'Method',
+            'type'    => 'Literal',
             'options' => array(
                 'route'    => '/application',
-                'verb'     => 'get',
                 'defaults' => array(
                     '__NAMESPACE__' => 'Application\Controller',
                     'controller'    => 'Index',
@@ -42,7 +41,7 @@ return array(
                     ),
                 ),
                 'jsonpost' => array(
-                    'type'    => 'Method',
+                    'type'    => 'Literal',
                     'options' => array(
                         'route'    => '/index/json-post',
                         'verb'     => 'post',

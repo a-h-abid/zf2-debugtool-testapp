@@ -15,8 +15,13 @@
 
     <hr/>
 
-    <a href="<?php echo $this->url('application/json') ?>">Json View</a>
+    <a href="<?php echo $this->url('application/json') ?>" target="_blank">Json View</a>
+    &nbsp;|&nbsp;
     <a id="make-json-call" href="<?php echo $this->url('application/jsonpost') ?>">Json Post Response</a>
+
+    <div class="well" id="json-post-response">
+
+    </div>
 
 </div>
 
@@ -28,7 +33,7 @@ $('#make-json-call').click(function(e){
         type : 'post',
         url : $(this).attr('href'),
     }).done(function(resp){
-        console.log(resp);
+        $('#json-post-response').text( JSON.stringify(resp) );
     });
 
 });
